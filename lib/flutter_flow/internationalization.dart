@@ -191,11 +191,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': 'Ha dimenticato la password',
       'ru': 'Забыли пароль',
     },
+    'iva1qjl6': {
+      'en': 'Sign In via Google',
+      'de': 'Anmelden über Google',
+      'fr': 'Se connecter via Google',
+      'it': 'Ha dimenticato la password ramite Google',
+      'ru': 'Войти через Google',
+    },
     'ov2qy1a8': {
       'en': 'Register',
       'de': 'Registrieren',
-      'fr': 'S\'inscrire',
-      'it': 'Iscrizione',
+      'fr': 'Registre',
+      'it': 'Registro',
       'ru': 'Зарегистрироваться',
     },
     'hquq31mg': {
@@ -232,6 +239,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Créer un compte',
       'it': 'Creare un account',
       'ru': 'Зарегистрироваться',
+    },
+    'ze9oy1ih': {
+      'en': 'Sign Up via Google',
+      'de': 'Anmeldung über Google',
+      'fr': 'Inscrivez-vous via Google',
+      'it': 'Registrati tramite Google',
+      'ru': 'Зарегистрироваться через Google',
     },
     '7cue03ji': {
       'en': 'Authentication',

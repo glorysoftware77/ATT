@@ -5,8 +5,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'authentication_model.dart';
 export 'authentication_model.dart';
 
@@ -318,7 +320,7 @@ class _AuthenticationWidgetState extends State<AuthenticationWidget>
                                                                 .emailAddressTextController,
                                                             focusNode: _model
                                                                 .emailAddressFocusNode,
-                                                            autofocus: true,
+                                                            autofocus: false,
                                                             autofillHints: const [
                                                               AutofillHints
                                                                   .email
@@ -742,18 +744,18 @@ class _AuthenticationWidgetState extends State<AuthenticationWidget>
                                                           ),
                                                         ),
                                                       ),
-                                                      const SingleChildScrollView(
+                                                      SingleChildScrollView(
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       0.0, 0.0),
                                                               child: Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -779,7 +781,85 @@ class _AuthenticationWidgetState extends State<AuthenticationWidget>
                                                                           .down,
                                                                   clipBehavior:
                                                                       Clip.none,
-                                                                  children: [],
+                                                                  children: [
+                                                                    FFButtonWidget(
+                                                                      onPressed:
+                                                                          () async {
+                                                                        Function()
+                                                                            navigate =
+                                                                            () {};
+                                                                        GoRouter.of(context)
+                                                                            .prepareAuthEvent();
+                                                                        final user =
+                                                                            await authManager.signInWithGoogle(context);
+                                                                        if (user ==
+                                                                            null) {
+                                                                          return;
+                                                                        }
+                                                                        navigate = () => context.goNamedAuth(
+                                                                            'SelectLanguage',
+                                                                            context.mounted);
+                                                                        if (loggedIn ==
+                                                                            true) {
+                                                                          await actions
+                                                                              .dismissKeyboard();
+                                                                        }
+
+                                                                        navigate();
+                                                                      },
+                                                                      text: FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'iva1qjl6' /* Sign In via Google */,
+                                                                      ),
+                                                                      icon:
+                                                                          const FaIcon(
+                                                                        FontAwesomeIcons
+                                                                            .google,
+                                                                        size:
+                                                                            15.0,
+                                                                      ),
+                                                                      options:
+                                                                          FFButtonOptions(
+                                                                        width:
+                                                                            230.0,
+                                                                        height:
+                                                                            52.0,
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            16.0,
+                                                                            0.0,
+                                                                            16.0,
+                                                                            0.0),
+                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        color: const Color(
+                                                                            0xFF827AE1),
+                                                                        textStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .override(
+                                                                              fontFamily: 'Readex Pro',
+                                                                              color: Colors.white,
+                                                                              letterSpacing: 0.0,
+                                                                            ),
+                                                                        elevation:
+                                                                            0.0,
+                                                                        borderRadius:
+                                                                            const BorderRadius.only(
+                                                                          bottomLeft:
+                                                                              Radius.circular(25.0),
+                                                                          bottomRight:
+                                                                              Radius.circular(25.0),
+                                                                          topLeft:
+                                                                              Radius.circular(25.0),
+                                                                          topRight:
+                                                                              Radius.circular(25.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
                                                                 ),
                                                               ),
                                                             ),
@@ -848,7 +928,7 @@ class _AuthenticationWidgetState extends State<AuthenticationWidget>
                                                                 .emailAddressCreateTextController,
                                                             focusNode: _model
                                                                 .emailAddressCreateFocusNode,
-                                                            autofocus: true,
+                                                            autofocus: false,
                                                             autofillHints: const [
                                                               AutofillHints
                                                                   .email
@@ -1375,34 +1455,120 @@ class _AuthenticationWidgetState extends State<AuthenticationWidget>
                                                           ),
                                                         ),
                                                       ),
-                                                      const Column(
+                                                      Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.0, 0.0),
-                                                            child: Wrap(
-                                                              spacing: 16.0,
-                                                              runSpacing: 0.0,
-                                                              alignment:
-                                                                  WrapAlignment
-                                                                      .center,
-                                                              crossAxisAlignment:
-                                                                  WrapCrossAlignment
-                                                                      .center,
-                                                              direction: Axis
-                                                                  .horizontal,
-                                                              runAlignment:
-                                                                  WrapAlignment
-                                                                      .center,
-                                                              verticalDirection:
-                                                                  VerticalDirection
-                                                                      .down,
-                                                              clipBehavior:
-                                                                  Clip.none,
-                                                              children: [],
+                                                            child: Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          20.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Wrap(
+                                                                spacing: 16.0,
+                                                                runSpacing: 0.0,
+                                                                alignment:
+                                                                    WrapAlignment
+                                                                        .center,
+                                                                crossAxisAlignment:
+                                                                    WrapCrossAlignment
+                                                                        .center,
+                                                                direction: Axis
+                                                                    .horizontal,
+                                                                runAlignment:
+                                                                    WrapAlignment
+                                                                        .center,
+                                                                verticalDirection:
+                                                                    VerticalDirection
+                                                                        .down,
+                                                                clipBehavior:
+                                                                    Clip.none,
+                                                                children: [
+                                                                  FFButtonWidget(
+                                                                    onPressed:
+                                                                        () async {
+                                                                      GoRouter.of(
+                                                                              context)
+                                                                          .prepareAuthEvent();
+                                                                      final user =
+                                                                          await authManager
+                                                                              .signInWithGoogle(context);
+                                                                      if (user ==
+                                                                          null) {
+                                                                        return;
+                                                                      }
+
+                                                                      context.goNamedAuth(
+                                                                          'SelectLanguage',
+                                                                          context
+                                                                              .mounted);
+                                                                    },
+                                                                    text: FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'ze9oy1ih' /* Sign Up via Google */,
+                                                                    ),
+                                                                    icon:
+                                                                        const FaIcon(
+                                                                      FontAwesomeIcons
+                                                                          .google,
+                                                                      size:
+                                                                          15.0,
+                                                                    ),
+                                                                    options:
+                                                                        FFButtonOptions(
+                                                                      width:
+                                                                          230.0,
+                                                                      height:
+                                                                          52.0,
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      color: const Color(
+                                                                          0xFF827AE1),
+                                                                      textStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Readex Pro',
+                                                                            color:
+                                                                                Colors.white,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                      elevation:
+                                                                          0.0,
+                                                                      borderRadius:
+                                                                          const BorderRadius
+                                                                              .only(
+                                                                        bottomLeft:
+                                                                            Radius.circular(25.0),
+                                                                        bottomRight:
+                                                                            Radius.circular(25.0),
+                                                                        topLeft:
+                                                                            Radius.circular(25.0),
+                                                                        topRight:
+                                                                            Radius.circular(25.0),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
                                                             ),
                                                           ),
                                                         ],
