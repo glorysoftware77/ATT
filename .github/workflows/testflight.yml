@@ -23,6 +23,11 @@ jobs:
         run: |
           sudo gem install fastlane
 
+      - name: Set MATCH_PASSWORD
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}  # Use the secret you created in the GitHub repository settings
+
+
       - name: Deploy to TestFlight
         run: |
           cd ios/fastlane  # Change to the directory containing the Fastfile
