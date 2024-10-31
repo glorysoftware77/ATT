@@ -12,9 +12,11 @@ platform :ios do
 
 
     # Step 2: Match to manage code signing profiles and certificates
+
     match(
       type: "appstore",  # Change to 'development' if building for dev
       app_identifier: "com.glory.activetraveltours", # Your app identifier
+      git_url: "https://github.com/glorysoftware77/ATT", # Git URL for storing signing certificates
       readonly: false,
       api_key: api_key
     )
