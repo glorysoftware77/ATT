@@ -18,8 +18,7 @@ platform :ios do
       app_identifier: "com.glory.activetraveltours", # Your app identifier
       git_url: "https://github.com/glorysoftware77/ATT", # Git URL for storing signing certificates
       readonly: false,
-      api_key: api_key,
-      skip_confirmation: false  # Enable interactive prompts
+      api_key: api_key
     )
 
     # Step 3: Update Flutter to the latest stable version
